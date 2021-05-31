@@ -10,7 +10,7 @@
   color: var(--text);
   background-color: var(--background);
   font-size: 14px;
-  line-height: 20px;
+  line-height: 22px;
 }
 
 #redComments[data-theme='dark'] {
