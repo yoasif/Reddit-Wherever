@@ -1,7 +1,7 @@
 {
   "name": "Reddit Wherever",
-  "description": "View Reddit comments of the current webpage or YouTube video.",
-  "version": "1.1.1",
+  "description": "View Reddit comments of any webpage or YouTube video.",
+  "version": "1.1.2",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
