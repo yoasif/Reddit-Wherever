@@ -9,11 +9,13 @@ chrome.tabs.onUpdated.addListener((tabId, change, tab) => {
 });
 
 chrome.tabs.onActivated.addListener(() => {
-  chrome.storage.sync.get('clickOnly', ({ clickOnly }) => {
-    if (!clickOnly) {
-      chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
-        getQueries(tabs[0].url, 0);
-      });
-    }
-  });
+  setTimeout(() => {
+    chrome.storage.sync.get('clickOnly', ({ clickOnly }) => {
+      if (!clickOnly) {
+        chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
+          getQueries(tabs[0].url, 0);
+        });
+      }
+    });
+  }, 500);
 });
