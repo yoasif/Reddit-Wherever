@@ -4,7 +4,6 @@ document.addEventListener('spfdone', () => ytPrepare());
 
 // prepares the youtube page for reddit comments
 function ytPrepare() {
-  setTheme();
   const url = window.location.href;
   if (url.includes('watch?v=')) {
     const ytComments = document.getElementById('comments');

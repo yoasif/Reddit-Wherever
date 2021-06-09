@@ -1,12 +1,3 @@
-// sets theme to dark mode if option is selected
-function setTheme() {
-  chrome.storage.sync.get('darkMode', ({ darkMode }) => {
-    if (darkMode) {
-      document.getElementById('redComments').dataset.theme = 'dark';
-    }
-  });
-}
-
 // Gets reddit search query URLs
 function getQueries(url, scriptType) {
   const queries = [`https://api.reddit.com/submit?url=${url}`];

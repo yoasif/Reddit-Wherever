@@ -7,7 +7,7 @@ By default YouTube comments will be replaced with the relevant Reddit comments. 
 If the extension icon turns red while browsing it means that the current webpage has been submitted to Reddit. Clicking the icon will open a popup where you can view the posts and comments associated with the URL. 
 
 Options:
-- Dark mode
+- Dark mode (based on system settings)
 - Run browser popup only when icon is clicked
 - Show YouTube comments as default
 
