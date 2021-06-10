@@ -11,7 +11,7 @@ Options:
 - Run browser popup only when icon is clicked
 - Show YouTube comments as default
 
-Reddit Wherever contains no ads, and signup is not required.
+Reddit Wherever contains no ads, collects no data and signup is not required.
 
 Download from Chrome Web Store:
 
