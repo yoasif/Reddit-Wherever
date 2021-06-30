@@ -1,3 +1,5 @@
+detectColorScheme();
+
 document.addEventListener('DOMContentLoaded', () => ytPrepare());
 document.addEventListener('yt-navigate-finish', () => ytPrepare());
 document.addEventListener('spfdone', () => ytPrepare());

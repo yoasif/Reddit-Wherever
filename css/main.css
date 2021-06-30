@@ -9,7 +9,18 @@
   --link-blue: #0079d3;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
+    --scrollbar: #acacac;
+    --light-grey: #3c3c3c;
+    --border: #3c3c3c;
+    --text: #acacac;
+    --blue: #3498db;
+    --link-blue: #3498db;
+    --dark-grey: #909090;
+    --background: #212121;
+  }
+
+/* @media (prefers-color-scheme: dark) {
   :root {
     --scrollbar: #acacac;
     --light-grey: #3c3c3c;
@@ -20,7 +31,7 @@
     --dark-grey: #909090;
     --background: #212121;
   }
-}
+} */
 
 #redComments {
   color: var(--text);

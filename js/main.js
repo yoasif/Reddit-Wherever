@@ -1,3 +1,23 @@
+// determines if the user has a set theme
+function detectColorScheme() {
+  chrome.storage.sync.get('theme', ({ theme }) => {
+    let setTheme = 'light';
+    // local storage is used to override OS theme settings
+    if (theme === 'light' || theme === 'dark') {
+      if (theme === 'dark') {
+        setTheme = 'dark';
+      }
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      // OS theme setting detected as dark
+      setTheme = 'dark';
+    }
+    // dark theme preferred, set document with a `data-theme` attribute
+    if (setTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  });
+}
+
 // Gets reddit search query URLs
 function getQueries(url, scriptType) {
   const queries = [`https://api.reddit.com/submit?url=${url}`];
