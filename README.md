@@ -17,6 +17,6 @@ Download from Chrome Web Store:
 
 https://chrome.google.com/webstore/detail/reddit-wherever/delfgcgfgfjlllhhcgiaacchlnhljbcm
 
-![Image of YouTube comment section](https://github.com/z0ccc/Reddit-Wherever/blob/master/chrome_images/screenshot-1.jpg?raw=true)
+![Image of YouTube comment section](https://github.com/z0ccc/Reddit-Wherever/blob/master/promo_images/screenshot-1.jpg?raw=true)
 
-![Image of extension popup](https://github.com/z0ccc/Reddit-Wherever/blob/master/chrome_images/screenshot-2.jpg?raw=true)
+![Image of extension popup](https://github.com/z0ccc/Reddit-Wherever/blob/master/promo_images/screenshot-2.jpg?raw=true)
