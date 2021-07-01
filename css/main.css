@@ -7,17 +7,19 @@
   --dark-grey: #888;
   --background: #fff;
   --link-blue: #0079d3;
+  --blockQuote: #4f4f4f;
 }
 
 [data-theme='dark'] {
-  --scrollbar: #acacac;
-  --light-grey: #3c3c3c;
-  --border: #3c3c3c;
-  --text: #acacac;
+  --scrollbar: #626567 ;
+  --light-grey: #565656;
+  --border: #565656;
+  --text: #F0F3F4;
   --blue: #3498db;
   --link-blue: #3498db;
   --dark-grey: #909090;
   --background: #212121;
+  --blockQuote: #acacac;
 }
 
 #redComments {
@@ -48,7 +50,7 @@ ul {
 
 blockquote {
   border-left: 2px solid var(--border);
-  color: #4f4f4f;
+  color: var(--blockQuote);
   padding: 0 8px;
   margin: 2px 0 2px 5px;
 }
