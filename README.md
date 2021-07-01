@@ -1,6 +1,6 @@
 # Reddit Wherever
 
-Reddit Wherever lets you view the Reddit comments of any YouTube Video or Webpage.
+View the Reddit comments of any YouTube Video or Webpage.
 
 By default YouTube comments will be replaced with the relevant Reddit comments. YouTube comments can still be viewed by clicking the YouTube icon located at the top right of the comments section.
 
