@@ -17,7 +17,7 @@ Download from Chrome Web Store:
 
 https://chrome.google.com/webstore/detail/reddit-wherever/delfgcgfgfjlllhhcgiaacchlnhljbcm
 
-https://www.youtube.com/embed/Mt0nPiAJ5Cg
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Mt0nPiAJ5Cg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ![Image of YouTube comment section](https://raw.githubusercontent.com/z0ccc/Reddit-Wherever/master/promo_images/screenshot-1.png)
 
