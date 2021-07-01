@@ -1,19 +1,14 @@
 // determines if the user has a set theme
 function detectColorScheme() {
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // OS theme setting detected as dark
+    document.documentElement.setAttribute('data-theme', 'dark');
+    console.log('hello');
+  }
   chrome.storage.sync.get('theme', ({ theme }) => {
-    let setTheme = 'light';
     // local storage is used to override OS theme settings
-    if (theme === 'light' || theme === 'dark') {
-      if (theme === 'dark') {
-        setTheme = 'dark';
-      }
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      // OS theme setting detected as dark
-      setTheme = 'dark';
-    }
-    // dark theme preferred, set document with a `data-theme` attribute
-    if (setTheme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
+    if (theme === 'dark' || theme === 'light') {
+      document.documentElement.setAttribute('data-theme', theme);
     }
   });
 }
