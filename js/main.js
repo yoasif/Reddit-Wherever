@@ -3,7 +3,6 @@ function detectColorScheme() {
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     // OS theme setting detected as dark
     document.documentElement.setAttribute('data-theme', 'dark');
-    console.log('hello');
   }
   chrome.storage.sync.get('theme', ({ theme }) => {
     // local storage is used to override OS theme settings
