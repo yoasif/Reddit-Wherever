@@ -1,5 +1,5 @@
 // determines if the user has a set theme
-function detectColorScheme() {
+function detectTheme() {
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     // OS theme setting detected as dark
     document.documentElement.setAttribute('data-theme', 'dark');

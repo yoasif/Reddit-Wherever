@@ -1,4 +1,4 @@
-detectColorScheme();
+detectTheme();
 
 document.addEventListener('DOMContentLoaded', () => ytPrepare());
 document.addEventListener('yt-navigate-finish', () => ytPrepare());
