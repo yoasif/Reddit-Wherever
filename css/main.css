@@ -8,13 +8,15 @@
   --background: #fff;
   --link-blue: #0079d3;
   --blockQuote: #4f4f4f;
+  scrollbar-color: var(--scrollbar) transparent !important;
+  scrollbar-width: thin !important;
 }
 
 [data-theme='dark'] {
-  --scrollbar: #626567 ;
+  --scrollbar: #626567;
   --light-grey: #565656;
   --border: #565656;
-  --text: #F0F3F4;
+  --text: #f0f3f4;
   --blue: #3498db;
   --link-blue: #3498db;
   --dark-grey: #909090;
@@ -93,6 +95,8 @@ blockquote {
   display: flex;
   overflow: auto;
   white-space: nowrap;
+  scrollbar-color: var(--scrollbar) transparent !important;
+  scrollbar-width: thin !important;
 }
 
 .subreddit {
