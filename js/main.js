@@ -58,7 +58,7 @@ async function getPosts(queries, url, scriptType) {
   let postArr = [];
 
   for (let i = 0; i < queries.length; i++) {
-    promisesFetch.push(fetch(queries[i], { mode: 'cors' }));
+    promisesFetch.push(fetch(queries[i]));
   }
 
   Promise.all(promisesFetch).then((resFetch) => {
@@ -143,7 +143,7 @@ function getSubreddits(data) {
 
 // Gets and print post info
 function getPost(item, first) {
-  fetch(chrome.runtime.getURL('html/post.html'), { mode: 'cors' })
+  fetch(chrome.runtime.getURL('html/post.html'))
     .then((response) => response.text())
     .then((template) => {
       Mustache.parse(template);
@@ -181,7 +181,7 @@ async function getComments(postUrl, post, loadMore) {
   if (document.getElementById(`c_${post}`).textContent && !loadMore) {
     document.getElementById(`c_${post}`).style.display = 'block';
   } else {
-    result = await fetch(postUrl, { mode: 'cors' });
+    result = await fetch(postUrl);
     json = await result.json();
     if (
       json &&
@@ -202,7 +202,7 @@ function showComments(commentList, post) {
   let loadID;
   let bodyHTML;
 
-  fetch(chrome.runtime.getURL('html/comment.html'), { mode: 'cors' })
+  fetch(chrome.runtime.getURL('html/comment.html'))
     .then((response) => response.text())
     .then((template) => {
       for (let i = 0; i < commentList.length; i++) {

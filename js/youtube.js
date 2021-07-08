@@ -39,7 +39,7 @@ function ytPrepare() {
       )}" height="30px" width="30px"/>`
     );
 
-    fetch(chrome.runtime.getURL('html/youtube.html'), { mode: 'cors' })
+    fetch(chrome.runtime.getURL('html/youtube.html'))
       .then((response) => response.text())
       .then((template) => {
         Mustache.parse(template);
