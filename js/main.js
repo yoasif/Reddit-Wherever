@@ -109,9 +109,11 @@ function checkPosts(postArr, url, scriptType) {
       document.getElementById('redComments').style.display = 'none';
       document.getElementById('redImgWrap').style.display = 'flex';
     }
-    document.getElementById(
-      'message'
-    ).innerHTML = `No posts found. <a class="submit" target="_blank" href="https://www.reddit.com/submit?url=${url}">Submit it</a>`;
+    const messageEl = document.getElementById('message');
+    messageEl.textContent = '';
+    messageEl.insertAdjacentHTML(
+      'beforeend', `No posts found. <a class="submit" target="_blank" href="https://www.reddit.com/submit?url=${url}">Submit it</a>`
+    );
   } else {
     getSubreddits(postArr);
   }
@@ -120,9 +122,12 @@ function checkPosts(postArr, url, scriptType) {
 // Gets and prints list of subreddits
 function getSubreddits(data) {
   for (let i = 0; i < data.length; i++) {
-    document.getElementById(
-      'subreddits'
-    ).innerHTML += `<div class="subreddit" id="${data[i].data.permalink}">${data[i].data.subreddit} (${data[i].data.num_comments})</div>`;
+    document
+      .getElementById('subreddits')
+      .insertAdjacentHTML(
+        'beforeend',
+        `<div class="subreddit" id="${data[i].data.permalink}">${data[i].data.subreddit} (${data[i].data.num_comments})</div>`
+      );
 
     if (i === 0) {
       document.getElementById(data[i].data.permalink).style.backgroundColor =
@@ -151,7 +156,9 @@ function getPost(item, first) {
         author: item.data.author,
       });
 
-      document.getElementById('posts').innerHTML += rendered;
+      document.getElementById('posts').insertAdjacentHTML(
+        'beforeend', rendered
+      );
 
       if (first === 1) {
         document.getElementById(`p_${item.data.permalink}`).style.display =
@@ -171,7 +178,7 @@ async function getComments(postUrl, post, loadMore) {
   let json;
   let commentList;
 
-  if (document.getElementById(`c_${post}`).innerHTML && !loadMore) {
+  if (document.getElementById(`c_${post}`).textContent && !loadMore) {
     document.getElementById(`c_${post}`).style.display = 'block';
   } else {
     result = await fetch(postUrl, { mode: 'cors' });
@@ -187,7 +194,7 @@ async function getComments(postUrl, post, loadMore) {
       showComments(commentList, post);
     }
   }
-  document.getElementById('message').innerHTML = '';
+  document.getElementById('message').textContent = '';
 }
 
 // Prints comments
@@ -204,11 +211,15 @@ function showComments(commentList, post) {
             commentList[i].data.parent_id.substring(3)
           );
           if (loadID) {
-            loadID.innerHTML += `<div class="commentTitle loadMore" id="m_${commentList[i].data.children}">load more comments (${commentList[i].data.count})</div>`;
+            loadID.insertAdjacentHTML(
+              'beforeend', `<div class="commentTitle loadMore" id="m_${commentList[i].data.children}">load more comments (${commentList[i].data.count})</div>`
+            );
           } else {
             document.getElementById(
               `c_${post}`
-            ).innerHTML += `<div class="commentTitle loadMore" id="m_${commentList[i].data.children}">load more comments (${commentList[i].data.count})</div>`;
+            ).insertAdjacentHTML(
+              'beforeend', `<div class="commentTitle loadMore" id="m_${commentList[i].data.children}">load more comments (${commentList[i].data.count})</div>`
+            );
           }
         } else {
           getReplies(commentList[i], post);
@@ -228,9 +239,13 @@ function showComments(commentList, post) {
           if (commentList[i].data.parent_id.substring(0, 2) === 't1') {
             document.getElementById(
               commentList[i].data.parent_id.substring(3)
-            ).innerHTML += rendered;
+            ).insertAdjacentHTML(
+              'beforeend', rendered
+            );
           } else {
-            document.getElementById(`c_${post}`).innerHTML += rendered;
+            document.getElementById(`c_${post}`).insertAdjacentHTML(
+              'beforeend', rendered
+            );
           }
         }
       }

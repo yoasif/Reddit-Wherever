@@ -33,9 +33,11 @@ function ytPrepare() {
       }
     });
 
-    redImgWrap.innerHTML = `<img id="redImg" class="toggleImg" src="${chrome.runtime.getURL(
-      '../images/grey_32.png'
-    )}" height="30px" width="30px"/>`;
+    redImgWrap.insertAdjacentHTML(
+      'beforeend', `<img id="redImg" class="toggleImg" src="${chrome.runtime.getURL(
+        '../images/grey_32.png'
+      )}" height="30px" width="30px"/>`
+    );
 
     fetch(chrome.runtime.getURL('html/youtube.html'), { mode: 'cors' })
       .then((response) => response.text())
@@ -44,7 +46,9 @@ function ytPrepare() {
         const rendered = Mustache.render(template, {
           image: chrome.runtime.getURL('../images/youtube_32.png'),
         });
-        redComments.innerHTML = rendered;
+        redComments.insertAdjacentHTML(
+          'beforeend', rendered
+        );
       });
 
     ytComments.parentNode.insertBefore(redImgWrap, ytComments);

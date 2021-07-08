@@ -2,7 +2,7 @@ window.onclick = function click(event) {
   if (event) {
     const currentPost = document.querySelector('.currentPost');
     if (event.target.matches('.subreddit')) {
-      document.getElementById('message').innerHTML = 'loading...';
+      document.getElementById('message').textContent = 'loading...';
       currentPost.style.backgroundColor = 'var(--background)';
       document.getElementById(event.target.id).style.backgroundColor =
         'var(--light-grey)';
@@ -45,8 +45,8 @@ window.onclick = function click(event) {
 window.onchange = function change(event) {
   const currentPost = document.querySelector('.currentPost').id;
 
-  document.getElementById('message').innerHTML = 'loading...';
-  document.getElementById(`c_${currentPost}`).innerHTML = '';
+  document.getElementById('message').textContent = 'loading...';
+  document.getElementById(`c_${currentPost}`).textContent = '';
 
   getComments(
     `https://api.reddit.com${currentPost}?sort=${
