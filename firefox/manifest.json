@@ -1,7 +1,7 @@
 {
   "name": "Reddit Wherever",
   "description": "View the Reddit comments of any YouTube Video or Webpage.",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "manifest_version": 2,
   "background": {
     "scripts": ["js/main.js", "background.js"],
