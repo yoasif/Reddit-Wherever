@@ -1,7 +1,11 @@
 {
   "name": "Reddit Wherever",
   "description": "View the Reddit comments of any YouTube Video or Webpage.",
+<<<<<<< HEAD:manifest.json
   "version": "1.1.5",
+=======
+  "version": "2.0.0",
+>>>>>>> dev:public/manifest.json
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
@@ -9,19 +13,13 @@
   "content_scripts": [
     {
       "matches": ["*://*.youtube.com/*"],
-      "css": ["css/main.css"],
-      "js": [
-        "js/mustache.min.js",
-        "js/main.js",
-        "js/events.js",
-        "js/youtube.js"
-      ],
+      "js": ["content.js"],
       "run_at": "document_end"
     }
   ],
   "permissions": ["storage", "tabs"],
   "action": {
-    "default_popup": "html/popup.html",
+    "default_popup": "popup.html",
     "default_icon": {
       "16": "images/reddit_16.png",
       "32": "images/reddit_32.png",
@@ -37,19 +35,13 @@
   },
   "web_accessible_resources": [
     {
-      "resources": [
-        "html/post.html",
-        "html/comment.html",
-        "html/youtube.html",
-        "images/youtube_32.png",
-        "images/grey_32.png"
-      ],
+      "resources": ["images/youtube_32.png", "images/grey_32.png"],
       "matches": ["*://*.youtube.com/*"],
       "extension_ids": []
     }
   ],
   "options_ui": {
-    "page": "html/options.html",
+    "page": "options.html",
     "open_in_tab": false
   }
 }

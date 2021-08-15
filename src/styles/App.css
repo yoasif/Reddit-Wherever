@@ -5,7 +5,8 @@
   --text: #212121;
   --blue: #369;
   --dark-grey: #888;
-  --background: #fff;
+  --background: transparent;
+  --white: #fff;
   --link-blue: #0079d3;
   --blockQuote: #4f4f4f;
   scrollbar-color: var(--scrollbar) transparent !important;
@@ -20,6 +21,7 @@
   --blue: #3498db;
   --link-blue: #3498db;
   --dark-grey: #909090;
+<<<<<<< HEAD:css/main.css
   --background: #212121;
   --blockQuote: #acacac;
 }
@@ -30,20 +32,43 @@
   background-color: var(--background);
   font-size: 14px;
   line-height: 22px;
+=======
+  --background: #181818;
+  --white: #212121;
+  --blockQuote: #acacac;
+>>>>>>> dev:src/styles/App.css
 }
 
-.popupClass {
-  width: 600px;
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+<<<<<<< HEAD:css/main.css
 .ytClass {
   margin: 20px 0 0 0;
+=======
+#redComments {
+  font-family: Verdana, sans-serif;
+  color: var(--text);
+  font-size: 25px;
+  line-height: 22px;
+  background-color: var(--background);
 }
 
-p {
-  margin: 0;
+.popup {
+  width: 600px;
+  margin: 8px;
+>>>>>>> dev:src/styles/App.css
 }
 
+button {
+  border: none;
+  background: transparent;
+}
+
+<<<<<<< HEAD:css/main.css
 ol,
 ul {
   margin: 0;
@@ -55,13 +80,31 @@ blockquote {
   color: var(--blockQuote);
   padding: 0 8px;
   margin: 2px 0 2px 5px;
+=======
+.toggleButton {
+  height: 28px;
+  width: 28px;
+  padding: 0;
+  margin: 0 0 0 8px;
 }
 
-#redImgWrap {
+.toggleImg {
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+>>>>>>> dev:src/styles/App.css
+}
+
+#redditImgWrap {
   display: none;
   justify-content: flex-end;
   margin: 20px 0 -50px 0;
   position: relative;
+}
+
+.subredditContainer {
+  display: flex;
+  justify-content: space-between;
 }
 
 #subredditWrap {
@@ -86,11 +129,6 @@ blockquote {
   border-radius: 2px;
 }
 
-.toggleImg {
-  margin: 0 0 0 8px;
-  cursor: pointer;
-}
-
 #subreddits {
   display: flex;
   overflow: auto;
@@ -100,13 +138,14 @@ blockquote {
 }
 
 .subreddit {
-  padding: 4px;
+  padding: 6px;
   margin: 0 4px 0 0;
   border: solid 1px var(--border);
   border-radius: 2px;
   cursor: pointer;
-  font-size: 12px;
-  background-color: var(--background);
+  font-size: 13px;
+  background-color: var(--white);
+  color: var(--text);
 }
 
 .subreddit:hover {
@@ -114,10 +153,6 @@ blockquote {
 }
 
 .post {
-  display: none;
-}
-
-.postWrap {
   display: flex;
   align-items: center;
   margin: 12px 0;
@@ -156,17 +191,27 @@ blockquote {
   text-decoration: underline;
 }
 
-.comment {
-  display: inline-block;
+.info {
+  color: var(--dark-grey);
 }
 
-.comment .comment {
-  padding: 0 0 0 12px;
+.selectedPost {
+  background-color: var(--light-grey);
+}
+
+.comment {
+  display: flex;
+}
+
+.commentLine {
+  opacity: 0.6;
+  height: auto;
+  padding: 0 0 0px 12px;
   border-left: 1px solid var(--border);
 }
 
 .commentInfo {
-  margin: 6px 0 6px 0;
+  margin: 6px 0;
 }
 
 .infoWrap {
@@ -189,15 +234,18 @@ blockquote {
   text-decoration: underline;
 }
 
+.commentBody {
+  font-size: 14px;
+}
+
 .loadMore {
   padding: 6px 0 6px 0px;
   cursor: pointer;
   font-size: 10px;
-}
-
-.comment .loadMore {
-  padding-left: 12px;
-  border-left: 1px solid var(--border);
+  border: none;
+  background-color: transparent;
+  line-height: 22px;
+  font-family: Verdana, sans-serif;
 }
 
 .info {
@@ -207,10 +255,6 @@ blockquote {
 .md a {
   color: var(--link-blue);
   text-decoration: none;
-}
-
-#message {
-  text-align: center;
 }
 
 .submit {
@@ -223,15 +267,35 @@ blockquote {
 }
 
 select {
-  display: inline-block;
+  display: block;
   border: solid 1px var(--border);
-  background-color: var(--background);
+  background-color: var(--white);
   border-radius: 2px;
   color: var(--text);
   margin: 0 0 6px 0;
   font-size: 12px;
 }
 
+<<<<<<< HEAD:css/main.css
+=======
+p {
+  margin: 0;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding-inline-start: 40px !important;
+}
+
+blockquote {
+  border-left: 2px solid var(--border);
+  color: var(--blockQuote);
+  padding: 0 8px;
+  margin: 2px 0 2px 5px;
+}
+
+>>>>>>> dev:src/styles/App.css
 .md h1,
 .md h2 {
   font-size: 20px;
@@ -239,3 +303,17 @@ select {
   margin-top: 13px;
   margin-bottom: 13px;
 }
+<<<<<<< HEAD:css/main.css
+=======
+
+.message {
+  text-align: center;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1000px) {
+  #redditImgWrap {
+    z-index: 10;
+  }
+}
+>>>>>>> dev:src/styles/App.css
